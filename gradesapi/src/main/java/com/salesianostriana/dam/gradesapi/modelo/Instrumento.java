@@ -26,6 +26,9 @@ public class Instrumento {
 
     private String contenidos;
 
+    @ManyToOne
+    private Asignatura asignatura;
+
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<ReferenteEvaluacion> referentes = new HashSet<>();
 
