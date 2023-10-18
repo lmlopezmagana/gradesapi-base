@@ -35,8 +35,13 @@ public class Asignatura {
     }
 
     public void removeReferente(ReferenteEvaluacion referenteEvaluacion) {
-        referentes.remove(referenteEvaluacion);
+        //referentes.remove(referenteEvaluacion);
+        removeReferente(referenteEvaluacion.getCodReferente());
         referenteEvaluacion.setAsignatura(null);
+    }
+
+    private void removeReferente(String codReferente) {
+        referentes.removeIf(referenteEvaluacion -> referenteEvaluacion.getCodReferente().equalsIgnoreCase(codReferente));
     }
 
 }
